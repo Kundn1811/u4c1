@@ -3,6 +3,7 @@ import styles from "./task.module.css";
 import Counter from "../Counter/Counter"
 const Task = ({el,onDelete}) => {
   // NOTE: do not delete `data-cy` key value pair
+  const [task,setTask] = React.useState(el)
   const [isCompleated,setIsCompleated] = React.useState(el.done)
   return (
     <li data-cy="task" className={styles.task}>

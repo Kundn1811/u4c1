@@ -9,7 +9,7 @@ const AddTask = ({todos,setTodos}) => {
     <div className={styles.todoForm}>
       <input data-cy="add-task-input" type="text" value={text} onChange={(e)=>{
       setText(e.target.value)
-      }} required/>
+      }} required />
       <button data-cy="add-task-button" onClick={()=>{
         
         let enteredText = text;
@@ -22,7 +22,11 @@ const AddTask = ({todos,setTodos}) => {
         }
         if(check===false){
           alert("task is already in the list ")
-        }else{
+        }
+        else if(enteredText===""){
+          alert("add task")
+        }
+        else{
           setTodos([...todos,{ id:todos.length+1,text:text,done:false,count:1}]
             )
         }
